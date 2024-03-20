@@ -1,0 +1,12 @@
+{
+    "ERR5000E": "ERR5000E: Exception while getDetails in DB: {0}",
+
+    "ERR4000E": "ERR4000E: User ID does not exist",
+    "ERR4001E": "ERR4001E: Given data is null",
+    "ERR4002E": "ERR4001E: Password must be at-least 8 characters with at-least one special character (except + and =), uppercase letter, lowercase letter and a number",
+    "ERR4003E": "ERR4003E: Invalid Phone Number",
+    
+
+    "ERR3000E": "ERR3000E: Forbidden Access",
+    "ERR3001E": "ERR3001E: Invalid Token"
+}
