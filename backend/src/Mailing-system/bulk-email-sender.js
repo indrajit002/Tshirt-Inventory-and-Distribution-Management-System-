@@ -9,7 +9,7 @@ require('dotenv').config();
 async function BulkEmailSender(req, res) {
     //email
     // MongoDB Atlas connection URL
-    // const mongoURL = 'mongodb+srv://indrajit_01:xLqjL5eluYv8nMsL@cluster01.q6vzi1k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster01';
+    // const mongoURL = '';
     // const mongoURL = process.env.MONGODB_URI;
 
     // Database and collection name
