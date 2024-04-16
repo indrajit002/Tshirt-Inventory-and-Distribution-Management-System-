@@ -33,8 +33,7 @@ require('dotenv').config();
 
 
 // MongoDB Atlas URI
-// const MONGOURI = "mongodb+srv://indrajitbarman233:Tz2EszNEKx251ITU@cluster01.ax3lkuh.mongodb.net/yourdatabase?retryWrites=true&w=majority";
-// const MONGOURI = "mongodb+srv://indrajit_01:xLqjL5eluYv8nMsL@cluster01.q6vzi1k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster01";
+
 const MONGOURI = process.env.MONGODB_URI;
 
 // Initiate Mongo Server with MongoDB Atlas URI
