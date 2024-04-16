@@ -9,7 +9,6 @@ const EmailForm = ({ onSubmit }) => {
     message: ""
   });
 
-  console.log(formData)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -20,7 +19,6 @@ const EmailForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.tar)
     onSubmit(formData);
   };
 

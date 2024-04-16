@@ -14,6 +14,10 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 import { Link } from "react-router-dom"
 
+import axios from "axios";
+
+const axiosAPI = axios.create();
+
 const FormUpload = () => {
   const [selectedFiles, setselectedFiles] = useState([])
 
@@ -38,6 +42,17 @@ const FormUpload = () => {
 
     const i = Math.floor(Math.log(bytes) / Math.log(k))
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i]
+  }
+
+  const handleSubmit = async () => {
+    // console.log("button is clicked");
+    try {
+      const response = await axiosAPI.post("backend_url");
+      console.log(response);
+    } catch (error) {
+
+    }
+
   }
 
   return (
@@ -121,6 +136,18 @@ const FormUpload = () => {
                     Send Files
                     </button>
                 </div>
+
+
+
+                <div className="text-center mt-4">
+   <button
+     type="button"
+     className="btn btn-primary waves-effect waves-light"
+     onClick={handleSubmit}
+   >
+     send mail
+     </button>
+ </div>
               </CardBody>
             </Card>
           </Col>

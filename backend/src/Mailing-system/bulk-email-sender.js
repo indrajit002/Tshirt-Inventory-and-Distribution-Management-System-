@@ -6,10 +6,11 @@ require('dotenv').config();
 
 
 // Define the BulkEmailSender function
-async function BulkEmailSender() {
+async function BulkEmailSender(req, res) {
+    //email
     // MongoDB Atlas connection URL
     // const mongoURL = 'mongodb+srv://indrajit_01:xLqjL5eluYv8nMsL@cluster01.q6vzi1k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster01';
-    const mongoURL = process.env.MONGODB_URI;
+    // const mongoURL = process.env.MONGODB_URI;
 
     // Database and collection name
     const dbName = 'pROJECT_sPACE';//database name 
@@ -57,10 +58,14 @@ async function BulkEmailSender() {
 
         // Close the MongoDB client
         await client.close();
+
+        res.send("sended");
+
     } catch (error) {
         console.error('Error sending email:', error);
     }
 }
 
 // Export the BulkEmailSender function
-module.exports = BulkEmailSender;
+module.exports = { BulkEmailSender };
+

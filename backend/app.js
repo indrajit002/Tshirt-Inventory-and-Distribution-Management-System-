@@ -28,11 +28,14 @@ const cors = require("cors");
 const UserRouter = require('./src/routes/userRoutes');
 const sendEmail = require('./src/Mailing-system/sendEmail');
 // const sendEmailArray = require("./src/Mailing-system/bulk-email-sender");
-const BulkEmailSender = require("./src/Mailing-system/bulk-email-sender");
+// const BulkEmailSender = require("./src/Mailing-system/bulk-email-sender");
+require('dotenv').config();
+
 
 // MongoDB Atlas URI
 // const MONGOURI = "mongodb+srv://indrajitbarman233:Tz2EszNEKx251ITU@cluster01.ax3lkuh.mongodb.net/yourdatabase?retryWrites=true&w=majority";
-const MONGOURI = "mongodb+srv://indrajit_01:xLqjL5eluYv8nMsL@cluster01.q6vzi1k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster01";
+// const MONGOURI = "mongodb+srv://indrajit_01:xLqjL5eluYv8nMsL@cluster01.q6vzi1k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster01";
+const MONGOURI = process.env.MONGODB_URI;
 
 // Initiate Mongo Server with MongoDB Atlas URI
 InitiateMongoServer(MONGOURI);
@@ -45,7 +48,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-app.use('/users', UserRouter);
+app.use('/', UserRouter);
 
 // Route to send emails
 app.post("/send-email", async (req, res) => {
@@ -65,12 +68,12 @@ app.get("/", (req, res) => {
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server Started at PORT ${PORT}`);
-});
+});              
 
 // Send emails frequently
 // sendEmailArray();
 //only one receiver
 // sendEmail();
-// bulk emailsender
-BulkEmailSender();
+// BulkEmailSender();
+
   
