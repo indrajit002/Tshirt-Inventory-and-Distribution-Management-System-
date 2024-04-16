@@ -46,7 +46,7 @@ async function BulkEmailSender(req, res) {
 
         // Define the email content
         const mailOptions = {
-            from: 'indrajitbarman2003@gmail.com', // Sender email address
+            from: '', // Sender email address
             to: emails.join(','), // Join the emails array 
             subject: 'Mail from Thub@io',// subject 
             text: 'You have received your Thub Tshirt!'// text
