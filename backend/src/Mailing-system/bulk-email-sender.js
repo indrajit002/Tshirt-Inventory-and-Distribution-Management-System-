@@ -35,8 +35,8 @@ async function BulkEmailSender(req, res) {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'indrajitbarman2003@gmail.com',
-                pass: 'cesd rbap ivhw yoox'
+                user: '//user email id',
+                pass: '//user passcode ** app generated'
                 // process.env.Mail_Sender,
                 // user: process.env.Mail_Sender,
                 // pass:  process.env.Mail_Sender_Pass
