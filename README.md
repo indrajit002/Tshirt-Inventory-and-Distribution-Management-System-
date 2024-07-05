@@ -5,7 +5,6 @@ this will take the gmals  from the cluster in the mongodb.
 this will a very good management system to manage all the things all together 
 and then to give the emails and other details it will provide a upload button to upload the details by a .csv file 
 
-Sure, I'll help you create a `README.md` file for your Inventory Management System project. Here's a draft based on the information you provided:
 
 ---
 
