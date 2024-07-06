@@ -19,9 +19,9 @@ function sendEmail() {
 
     // Define the email content
     const mailOptions = {
-        from: 'indrajitbarman2003@gmail.com', //sender side 
+        from: '', //sender side 
         // from: process.env.Mail_Sender, //sender side 
-        to: 'prasad111prasad11@gmail.com,indrajitbarman035@gmail.com,aghimire756@gmail.com', //receiver side 
+        to: '', //receiver side 
         subject: 'Mail from Thub@io',
         text: 'You have received your Thub Tshirt!'
     };

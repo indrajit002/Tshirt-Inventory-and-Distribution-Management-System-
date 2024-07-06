@@ -7,9 +7,9 @@ const InitiateMongoServer = async (mongoURI) => {
       useUnifiedTopology: true,
     });
     console.log("Connected to DB !!");
-  } catch (e) {
-    console.error(e);
-    throw e;
+  } catch (error) {
+    console.error("Error connecting to database:", error.message);
+    throw error;
   }
 };
 
