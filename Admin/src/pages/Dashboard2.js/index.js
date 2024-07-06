@@ -87,7 +87,7 @@ const Dashboard2 = () => {
                                         <Row>
                                             <Col xs={8}>
                                                 <div>
-                                                    <p className="text-muted fw-medium mt-1 mb-2">Orders</p>
+                                                    <p className="text-muted fw-medium mt-1 mb-2">Tshirt Orders</p>
                                                     <h4>1,368</h4>
                                                 </div>
                                             </Col>
@@ -105,9 +105,7 @@ const Dashboard2 = () => {
                                         </Row>
 
                                         <p className="mb-0"><span className="badge badge-soft-success me-2"> 0.8% <i
-                                            className="mdi mdi-arrow-up"></i> </span> From previous month
-                                            
-                                            </p>
+                                            className="mdi mdi-arrow-up"></i> </span> From previous period</p>
                                     </CardBody>
                                 </Card>
                             </Col>
@@ -117,8 +115,8 @@ const Dashboard2 = () => {
                                         <Row>
                                             <Col xs={8}>
                                                 <div>
-                                                    <p className="text-muted fw-medium mt-1 mb-2">Inventory</p>
-                                                    <h4> 32,695</h4>
+                                                    <p className="text-muted fw-medium mt-1 mb-2">Tshirt Delivered</p>
+                                                    <h4>$ 32,695</h4>
                                                 </div>
                                             </Col>
 
@@ -135,9 +133,7 @@ const Dashboard2 = () => {
                                         </Row>
 
                                         <p className="mb-0"><span className="badge badge-soft-success me-2"> 0.6% <i
-                                            className="mdi mdi-arrow-up"></i> </span> From previous month
-                                            
-                                            </p>
+                                            className="mdi mdi-arrow-up"></i> </span> From previous period</p>
                                     </CardBody>
                                 </Card>
                             </Col>
@@ -148,26 +144,14 @@ const Dashboard2 = () => {
                     <EmailSent />
                 </Row>
                 <Row>
-                    <Col xl={3}>
+                    <Col xl={6}>
                         <MiniWidget />
                     </Col>
                     <Col xl={6}>
-                        <EarningChart />
-                    </Col>
-                    <Col xl={3}>
                         <YearlySale />
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={4}>
-                        <ActivityComp />
-                    </Col>
-                    <Col lg={4}>
-                        <PopularProduct />
-                    </Col>
-                    <Col lg={4}>
-                        <SocialSource />
-                    </Col>
                 </Row>
             </div>
         </React.Fragment>

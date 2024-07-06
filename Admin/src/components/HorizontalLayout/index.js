@@ -72,8 +72,12 @@ class Layout extends Component {
               <div className="chase-dot"></div>
               <div className="chase-dot"></div>
               <div className="chase-dot"></div>
-              <div className="chase-dot"></div>  
-            </div>uuuuuu
+              <div className="chase-dot"></div>
+            </div>
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div id="layout-wrapper">
             <header id="page-topbar">
               <Header
                 theme={this.props.topbarTheme}
@@ -91,7 +95,7 @@ class Layout extends Component {
           </div>
 
         </div>
-        {/* {this.props.showRightSidebar ? <Ri ghtbar /> : null} */}
+        {this.props.showRightSidebar ? <Rightbar /> : null}
       </React.Fragment>
     )
   }

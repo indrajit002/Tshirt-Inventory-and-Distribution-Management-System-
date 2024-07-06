@@ -7,20 +7,20 @@ class SalesAnalytics extends Component {
     super(props)
 
     this.state = {
-      series: [38, 26, 14,22],
+      series: [38, 26, 14],
       options: {
-        labels: ["Owl coder", "Drive ready", "Intern","Staff"],
+        labels: ["Online", "Offline", "Marketing"],
         plotOptions: {
           pie: {
             donut: {
-              size: '50%'
+              size: '75%'
             }
           }
         },
         legend: {
           show: false,
         },
-        colors: ['#000000','#FFA500','#FFFF00','#808080'],
+        colors: ['#3b5de7', '#45cb85', '#eeb902'],
       },
     }
   }
@@ -29,7 +29,7 @@ class SalesAnalytics extends Component {
       <React.Fragment>
         <Card>
           <CardBody>
-            <h4 className="card-title mb-4">Different Technology</h4>
+            <h4 className="card-title mb-4">taken t shirt Analytics</h4>
 
             <Row className="align-items-center">
               <Col sm={6}>
@@ -44,37 +44,28 @@ class SalesAnalytics extends Component {
               <Col sm={6}>
                 <div>
                   <Row>
-                    <div className="col-8">
+                    <div className="col-6">
                       <div className="py-3">
                         <p className="mb-1 text-truncate"><i
-                          className="mdi mdi-circle text-black me-1"></i>{" "}Owl coder
+                          className="mdi mdi-circle text-primary me-1"></i>{" "}owl coder Tshirt
                             </p>
-                        <h5> 2,652</h5>
+                        <h5>2,652</h5>
                       </div>
                     </div>
-                    <div className="col-8">
+                    <div className="col-6">
                       <div className="py-3">
                         <p className="mb-1 text-truncate"><i
-                          className="mdi mdi-circle text-warning me-1"></i>{" "}Drive ready</p>
+                          className="mdi mdi-circle text-success me-1"></i>{" "}Drive Ready Tshirt</p>
                         <h5> 2,284</h5>
                       </div>
                     </div>
-                    <div className="col-8">
+                    <div className="col-6">
                       <div className="py-3">
                         <p className="mb-1 text-truncate"><i
-                          className="mdi mdi-circle text-warning me-1"></i>{" "}Intern</p>
+                          className="mdi mdi-circle text-warning me-1"></i>{" "}Project Space Tshirt</p>
                         <h5> 1,753</h5>
                       </div>
                     </div>
-                    <div className="col-8">
-                      <div className="py-3">
-                        <p className="mb-1 text-truncate"><i
-                          className="mdi mdi-circle text-secondary me-1"></i>{" "}Staff</p>
-                        <h5> 1,753</h5>
-                      </div>
-                    </div>
-                    
-                    
                   </Row>
                 </div>
               </Col>

@@ -17,7 +17,7 @@ const options= {
     ,
     plotOptions: {
         bar: {
-            virtical: !0, barHeight: '24%', endingShape: 'rounded',
+            horizontal: !0, barHeight: '24%', endingShape: 'rounded',
         }
     }
     ,
@@ -46,28 +46,28 @@ const EarningChart = () => {
         <React.Fragment>
             <Card>
                 <CardBody>
-                    <CardTitle className="h4 mb-4">monthly Earning</CardTitle>
+                    <CardTitle className="h4 mb-4">Earning</CardTitle>
 
                     <Row>
                         <Col lg={6}>
                             <div>
                                 <p>1 Jan - 31 Jan, 2020</p>
                                 <p className="mb-2">Total Earning</p>
-                                <h4> 12,362</h4>
+                                <h4>$ 12,362</h4>
                             </div>
 
                             <Row>
                                 <Col sm={6}>
                                     <div className="mt-3">
                                         <p className="mb-2 text-truncate">This Month</p>
-                                        <h5 className="d-inline-block align-middle mb-0"> 9,245</h5> <span
+                                        <h5 className="d-inline-block align-middle mb-0">$ 9,245</h5> <span
                                             className="badge badge-soft-success">+ 1.5 %</span>
                                     </div>
                                 </Col>
                                 <Col sm={6}>
                                     <div className="mt-3">
                                         <p className="mb-2 text-truncate">Last Month</p>
-                                        <h5>8,234</h5>
+                                        <h5>$ 8,234</h5>
                                     </div>
                                 </Col>
                             </Row>

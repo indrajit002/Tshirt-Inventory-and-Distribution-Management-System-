@@ -4,22 +4,22 @@ import { Card, CardBody, Col, Row } from 'reactstrap';
 const Overview = () => {
     return (
         <React.Fragment>
-            <Col xl={12}>
+            <Col xl={3}>
                 <Card>
                     <CardBody>
-                        <h4 className="card-title mb-4" style={{color:'black'}}>Overview About T-shirts</h4>
+                        <h4 className="card-title mb-4">Overview</h4>
 
                         <div>
                             <div className="pb-3 border-bottom">
                                 <Row className="align-items-center">
                                     <Col xs={8}>
-                                        <p className="mb-2">Newly Required</p>
-                                        <h4 className="mb-0">4,300</h4>
+                                        <p className="mb-2">New Visitors</p>
+                                        <h4 className="mb-0">3,524</h4>
                                     </Col>
                                     <Col xs={4}>
                                         <div className="text-end">
                                             <div>
-                                                100 % <i className="mdi mdi-arrow-up text-success ms-1"></i>
+                                                2.06 % <i className="mdi mdi-arrow-up text-success ms-1"></i>
                                             </div>
                                             <div className="progress progress-sm mt-3">
                                                 <div className="progress-bar" role="progressbar"
@@ -34,13 +34,13 @@ const Overview = () => {
                             <div className="py-3 border-bottom">
                                 <Row className="align-items-center">
                                     <Col xs={8}>
-                                        <p className="mb-2">Stock Having</p>
+                                        <p className="mb-2">Product Views</p>
                                         <h4 className="mb-0">2,465</h4>
                                     </Col>
                                     <Col xs={4}>
                                         <div className="text-end">
                                             <div>
-                                                57.32 % <i className="mdi mdi-arrow-up text-success ms-1"></i>
+                                                0.37 % <i className="mdi mdi-arrow-up text-success ms-1"></i>
                                             </div>
                                             <div className="progress progress-sm mt-3">
                                                 <div className="progress-bar bg-warning" role="progressbar"
@@ -54,13 +54,13 @@ const Overview = () => {
                             <div className="pt-3">
                                 <Row className="align-items-center">
                                     <Col xs={8}>
-                                        <p className="mb-2">Requird</p>
-                                        <h4 className="mb-0">1835</h4>
+                                        <p className="mb-2">Revenue</p>
+                                        <h4 className="mb-0">$ 4,653</h4>
                                     </Col>
                                     <Col xs={4}>
                                         <div className="text-end">
                                             <div>
-                                                42.67 % <i className="mdi mdi-arrow-up text-success ms-1"></i>
+                                                2.18 % <i className="mdi mdi-arrow-up text-success ms-1"></i>
                                             </div>
                                             <div className="progress progress-sm mt-3">
                                                 <div className="progress-bar bg-success" role="progressbar"

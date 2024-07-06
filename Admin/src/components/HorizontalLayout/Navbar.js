@@ -88,15 +88,14 @@ const Navbar = props => {
                 >
                   {props.t("Dashboard")}{" "}<div className="arrow-down"></div>
                 </Link>
-                
                 <div
                   className={classname("dropdown-menu", { show: dashboard })}
                 >
-                  <Link to="/dashboard" className="dropdown-item">
-                    {props.t("Dashboard")} 1
-                    </Link>
+                  
+                
+                  
                   <Link to="/dashboard2" className="dropdown-item">
-                    {props.t("Dashboard")} 2
+                    {props.t("Dashboard2")} 
                     </Link>
                 </div>
               </li>

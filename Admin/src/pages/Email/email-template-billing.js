@@ -1,5 +1,5 @@
-/*import React from "react"
-x
+import React from "react"
+import { Row, Col } from "reactstrap"
 // import { Link } from "react-router-dom"
 
 //Import Breadcrumb
@@ -627,4 +627,4 @@ const EmailTemplateBilling = () => {
   )
 }
 
-export default EmailTemplateBilling;*/
+export default EmailTemplateBilling;

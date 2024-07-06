@@ -51,7 +51,7 @@ const ConfirmMail = () => {
                           deleniti atque corrupti quos dolores et
                           </p>
                         <div className="mt-4">
-                          <Link to="dashboard" className="btn btn-success">
+                          <Link to="dashboard2" className="btn btn-success">
                             Back to Home
                             </Link>
                         </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const LatestTransaction = () => {
     return (
-        <Col lg={12}>
+        <Col lg={8}>
             <Card>
                 <CardBody>
                     <CardTitle className="h4 mb-4">Latest Transaction</CardTitle>
@@ -13,61 +13,61 @@ const LatestTransaction = () => {
                             <thead>
                                 <tr>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Roll no.</th>
-                                    <th scope="col">Student name</th>
-                                    <th scope="col">Technology</th>
-                                    <th scope="col" colSpan="2">Size</th>
+                                    <th scope="col">Id no.</th>
+                                    <th scope="col">Billing Name</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col" colSpan="2">Payment Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>15/01/2020</td>
                                     <td>
-                                        <Link to="#" className="text-body fw-medium">21P31A1223</Link>
+                                        <Link to="#" className="text-body fw-medium">#SK1235</Link>
                                     </td>
-                                    <td>Ayush Ghimire</td>
-                                    <td>DRIVE READY</td>
-                                    <td><span className="badge badge-soft-success font-size-12">XL</span>
+                                    <td>Werner Berlin</td>
+                                    <td>$ 125</td>
+                                    <td><span className="badge badge-soft-success font-size-12">Paid</span>
                                     </td>
                                     <td><Link to="#" className="btn btn-primary btn-sm">View</Link></td>
                                 </tr>
                                 <tr>
-                                    <td>22/01/2020</td>
+                                    <td>16/01/2020</td>
                                     <td>
-                                        <Link to="#" className="text-body fw-medium">21P31A0537</Link>
+                                        <Link to="#" className="text-body fw-medium">#SK1236</Link>
                                     </td>
-                                    <td>DURGA PRASAD</td>
-                                    <td>OWL CODER</td>
-                                    <td><span className="badge badge-soft-danger font-size-12">M</span>
+                                    <td>Robert Jordan</td>
+                                    <td>$ 118</td>
+                                    <td><span className="badge badge-soft-danger font-size-12">Chargeback</span>
                                     </td>
                                     <td><Link to="#" className="btn btn-primary btn-sm">View</Link></td>
                                 </tr>
                                 <tr>
                                     <td>17/01/2020</td>
                                     <td>
-                                        <Link to="#" className="text-body fw-medium">21A91A0234</Link>
+                                        <Link to="#" className="text-body fw-medium">#SK1237</Link>
                                     </td>
-                                    <td>SAI LOKESH</td>
-                                    <td>INTERN</td>
-                                    <td><span className="badge badge-soft-success font-size-12">S</span>
+                                    <td>Daniel Finch</td>
+                                    <td>$ 115</td>
+                                    <td><span className="badge badge-soft-success font-size-12">Paid</span>
                                     </td>
                                     <td><Link to="#" className="btn btn-primary btn-sm">View</Link></td>
                                 </tr>
                                 <tr>
                                     <td>18/01/2020</td>
                                     <td>
-                                        <Link to="#" className="text-body fw-medium">21P31A0588</Link>
+                                        <Link to="#" className="text-body fw-medium">#SK1238</Link>
                                     </td>
-                                    <td>INDRAJIT BARMAN</td>
-                                    <td>PROJECT SPACE</td>
-                                    <td><span className="badge badge-soft-warning font-size-12">XXL</span>
+                                    <td>James Hawkins</td>
+                                    <td>$ 121</td>
+                                    <td><span className="badge badge-soft-warning font-size-12">Refund</span>
                                     </td>
                                     <td><Link to="#" className="btn btn-primary btn-sm">View</Link></td>
                                 </tr>
                             </tbody>
                         </Table>
                     </div>
-                    {/* <div className="mt-3">
+                    <div className="mt-3">
                         <Pagination className="pagination pagination-rounded justify-content-center mb-0">
                             <PaginationItem>
                                 <PaginationLink to="#">Previous</PaginationLink>
@@ -77,7 +77,7 @@ const LatestTransaction = () => {
                             <PaginationItem><PaginationLink to="#">3</PaginationLink></PaginationItem>
                             <PaginationItem><PaginationLink to="#">Next</PaginationLink></PaginationItem>
                         </Pagination>
-                    </div> */}
+                    </div>
                 </CardBody>
             </Card>
         </Col>

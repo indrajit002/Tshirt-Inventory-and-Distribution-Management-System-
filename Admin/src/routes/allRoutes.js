@@ -218,4 +218,4 @@ const authRoutes = [
     { path: "/auth-lock-screen", component: LockScreen },
 ]
 
-export { userRoutes, authRoutes }             
+export { userRoutes, authRoutes }

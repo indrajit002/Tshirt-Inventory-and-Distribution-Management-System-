@@ -4,7 +4,7 @@ import React from "react"
 import { Switch, BrowserRouter as Router } from "react-router-dom"
 import { connect } from "react-redux"
 
-// Import Routes all                       
+// Import Routes all
 import { userRoutes, authRoutes } from "./routes/allRoutes"
 
 // Import all middleware
@@ -39,7 +39,7 @@ const App = props => {
     return layoutCls
   }
 
-  const Layout = getLayout()          
+  const Layout = getLayout()
   return (
     <React.Fragment>
       <Router>
@@ -52,7 +52,7 @@ const App = props => {
               component={route.component}
               key={idx}
               isAuthProtected={false}
-            />                     
+            />
           ))}
           
           {userRoutes.map((route, idx) => (

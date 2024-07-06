@@ -4,15 +4,15 @@ import ReactApexChart from "react-apexcharts"
 import { Link } from "react-router-dom"
 
 const series = [{
-    name: 'AEC', type: 'column', data: [23, 11, 53, 27, 13, 19, 22, 37, 21, 44, 22, 30]
+    name: 'Series A', type: 'column', data: [23, 11, 53, 27, 13, 19, 22, 37, 21, 44, 22, 30]
 }
     ,
 {
-    name: 'ACET', type: 'area', data: [36, 47, 33, 41, 22, 37, 43, 21, 41, 56, 27, 43]
+    name: 'Series B', type: 'area', data: [36, 47, 33, 41, 22, 37, 43, 21, 41, 56, 27, 43]
 }
     ,
 {
-    name: 'ACOE', type: 'line', data: [46, 57, 43, 51, 32, 47, 53, 31, 51, 66, 37, 53]
+    name: 'Series C', type: 'line', data: [46, 57, 43, 51, 32, 47, 53, 31, 51, 66, 37, 53]
 }
 ]
 
@@ -40,7 +40,7 @@ const options= {
         0.25,
         1],
         gradient: {
-            inverseColors: !1, shade: 'light', type: "vertical", opacityFrom: 0.85, opacityTo: 0.55, stops: [ 100, 200, 300,400]
+            inverseColors: !1, shade: 'light', type: "vertical", opacityFrom: 0.85, opacityTo: 0.55, stops: [0, 100, 100, 100]
         }
     }
     ,
@@ -76,8 +76,7 @@ const Breadcrumb = props => {
                                 </li>
                             </ul>
                         </div>
-
-                        <h4 className="card-title mb-4">Registrations</h4>
+                        <h4 className="card-title mb-4">Email Sent</h4>
                         <ReactApexChart
                             options={options}
                             series={series}
@@ -91,7 +90,6 @@ const Breadcrumb = props => {
             </Col>
         </React.Fragment>
     )
-   
 }
 
 

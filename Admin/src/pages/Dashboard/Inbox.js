@@ -14,28 +14,28 @@ const Overview = () => {
         {
             id: 1,
             img: avatar1,
-            name: 'Jyothula Durga Prasad',
+            name: 'Mr jyotila durga prasad',
             desc: "Hey! there I'm available",
             time: '05 min'
         },
         {
             id: 2,
             img: avatar2,
-            name: 'Naralasetti Durga Prasad',
+            name: 'Mr Naralasetti durga prasad',
             desc: "This theme is awesome!",
             time: '12 min'
         },
         {
             id: 3,
             img: avatar3,
-            name: 'Simhadri',
+            name: 'Mr Simadhri ',
             desc: "Nice to meet you",
             time: '18 min'
         },
         {
             id: 4,
             img: avatar4,
-            name: 'Ashok',
+            name: 'Mr Ashoke ',
             desc: "I've finished it! See you so",
             time: '2hr ago'
         },
@@ -44,7 +44,7 @@ const Overview = () => {
     return (
         <React.Fragment>
             <Col lg={4}>
-                {/* <Card>
+                <Card>
                     <CardBody>
                         <h4 className="card-title mb-4">Inbox</h4>
 
@@ -71,9 +71,11 @@ const Overview = () => {
                             
                         </ul>
 
-                        
+                        <div className="text-center">
+                            <Link to="#" className="btn btn-primary btn-sm">Load more</Link>
+                        </div>
                     </CardBody>
-                </Card> */}
+                </Card>
             </Col>
         </React.Fragment>
     )

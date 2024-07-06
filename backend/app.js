@@ -1,79 +1,46 @@
-
-// //oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-//MAIN API (DD--> SENDING EMAIL )
-// const start = async () => {
-//     try {
-//         app.listen(PORT, () => {
-//             console.log(`Server Started at PORT ${PORT}`);
-//         });
-//     } catch (error) {
-//         console.error('Error starting server:', error);
-//     }
-// };
-
-
-// // Execute the server start function
-// start();
-
-// // Execute the function to send email
-// sendEmail();
-// // dd();
-
-// //send emails frequently
-// // sendEmailArray();
 const express = require("express");
 const bodyParser = require("body-parser");
-const InitiateMongoServer = require("./src/config/db");
 const cors = require("cors");
-const UserRouter = require('./src/routes/userRoutes');
-const sendEmail = require('./src/Mailing-system/sendEmail');
-// const sendEmailArray = require("./src/Mailing-system/bulk-email-sender");
-// const BulkEmailSender = require("./src/Mailing-system/bulk-email-sender");
-require('dotenv').config();
-
-
-// MongoDB Atlas URI
-// const MONGOURI = "mongodb+srv://indrajitbarman233:Tz2EszNEKx251ITU@cluster01.ax3lkuh.mongodb.net/yourdatabase?retryWrites=true&w=majority";
-// const MONGOURI = "mongodb+srv://indrajit_01:xLqjL5eluYv8nMsL@cluster01.q6vzi1k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster01";
-const MONGOURI = process.env.MONGODB_URI;
-
-// Initiate Mongo Server with MongoDB Atlas URI
-InitiateMongoServer(MONGOURI);
+const InitiateMongoServer = require("./src/config/db");
+const UserRouter = require("./src/routes/userRoutes");
+const fileUploadRouter = require("./src/upload-System/fileUploadRoutes");
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// Middlewares
+// MongoDB Atlas URI
+const MONGOURI = process.env.MONGODB_URI;
+
+// Initialize MongoDB Server
+InitiateMongoServer(MONGOURI);
+
+// Middleware
+app.use(cors({
+  origin: 'http://localhost:3000', // Adjust based on your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(bodyParser.json());
-app.use(cors());
 
 // Routes
-app.use('/', UserRouter);
-
-// Route to send emails
-app.post("/send-email", async (req, res) => {
-  try {
-    await sendEmail();
-    res.status(200).json({ success: true, message: "Email sent successfully" });
-  } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ success: false, message: "Failed to send email" });
-  }
+app.get("/", (req, res) => {
+  res.json({ message: "API is Working" });
 });
 
-app.get("/", (req, res) => {
-  res.json({ message: "API is Working " });
+// Mount UserRouter at root path
+app.use("/", UserRouter);
+
+// Mount file upload routes under /api
+app.use("/api", fileUploadRouter);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: "Internal Server Error" });
 });
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server Started at PORT ${PORT}`);
-});              
-
-// Send emails frequently
-// sendEmailArray();
-//only one receiver
-// sendEmail();
-// BulkEmailSender();
-
-  
+});

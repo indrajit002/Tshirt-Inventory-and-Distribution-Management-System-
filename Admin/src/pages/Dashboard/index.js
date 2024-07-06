@@ -29,7 +29,7 @@ const Dashboard = () => {
 
               <div className="page-title-right">
                 <ol className="breadcrumb m-0">
-                  <li className="breadcrumb-item active">Welcome to technical hub Dashboard</li>
+                  <li className="breadcrumb-item active">Welcome to the technical hub Dashboard</li>
                 </ol>
               </div>
 
@@ -38,7 +38,7 @@ const Dashboard = () => {
         </Row>
 
         <Row>
-          <Col lg={6}>
+          <Col lg={3}>
             <Card>
               <CardBody>
                 <div className="d-flex align-items-start">
@@ -47,11 +47,11 @@ const Dashboard = () => {
                       <i className="mdi mdi-tag-plus-outline"></i>
                     </span>
                   </div>
-                  <div className="">
+                  <div className="flex-1">
                     <div className="font-size-16 mt-2">New Orders</div>
                   </div>
                 </div>
-                <h4 className="mt-4">1,368</h4>
+                <h4 className="mt-4">1,000</h4>
                 <div className="row">
                   <div className="col-7">
                     <p className="mb-0"><span className="text-success me-2"> 0.28% <i
@@ -78,11 +78,11 @@ const Dashboard = () => {
                     </span>
                   </div>
                   <div className="flex-1">
-                    <div className="font-size-16 mt-2">New Students</div>
+                    <div className="font-size-16 mt-2">New Users</div>
 
                   </div>
                 </div>
-                <h4 className="mt-4">2,456</h4>
+                <h4 className="mt-4">20,000</h4>
                 <Row>
                   <div className="col-7">
                     <p className="mb-0"><span className="text-success me-2"> 0.16% <i
@@ -91,7 +91,6 @@ const Dashboard = () => {
                   <div className="col-5 align-self-center">
                     <Progress
                       value="62"
-                      
                       color="success"
                       className="bg-transparent progress-sm"
                       size="sm"
@@ -110,45 +109,18 @@ const Dashboard = () => {
           </Col>
         </Row>
         <Row>
-          <Col lg={6}>
+          <Col lg={5}>
             <SalesAnalytics />
           </Col>
-          <Col lg={6}>
+          <Col lg={4}>
             <ScatterChart />
           </Col>
 
-          {/* <Col lg={3}>
-            <Card className="bg-primary">
-              <CardBody>
-                <div className="text-white">
-                  <h5 className="text-white">2400 + New Users</h5>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus</p>
-                  <div>
-                    <Link to="#" className="btn btn-outline-success btn-sm">View more</Link>
-                  </div>
-                </div>
-                <Row className="justify-content-end">
-                  <div className="col-8">
-                    <div className="mt-4">
-                      <img src={widgetImage} alt=""
-                        className="img-fluid mx-auto d-block" />
-                    </div>
-                  </div>
-                </Row>
-              </CardBody>
-            </Card>
-          </Col> */}
-        </Row>
-        <Row>
-          <Overview />
-          <Reviews />
-          <Revenue />
+           
+        
+         
         </Row>
 
-        <Row>
-          <Inbox />
-          <LatestTransaction />
-        </Row>
 
       </div>
     </React.Fragment>

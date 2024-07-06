@@ -123,7 +123,7 @@ mock.onPost(url.POST_FAKE_REGISTER).reply(config => {
 
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve([200, "Check you mail and reset your password."])
+        resolve([200, "Check your mail and reset your password."])
       })
     })
   })

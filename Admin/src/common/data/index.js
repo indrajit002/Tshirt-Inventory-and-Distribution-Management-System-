@@ -8,5 +8,3 @@ export {
   calenderDefaultCategories,
   tasks,
 }
-                                 
-                                                                                    
