@@ -1,17 +1,16 @@
-import PropTypes from "prop-types";
-import React, { useEffect, useRef, useCallback, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import SimpleBar from "simplebar-react";
-import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom"; // Ensure withRouter is imported
 import { withTranslation } from "react-i18next";
-import axios from "axios";
 import MetisMenu from "metismenujs";
 
 const SidebarContent = ({ location, t }) => {
   const ref = useRef();
   const [selectedFile, setSelectedFile] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
+  const [isSendingEmails, setIsSendingEmails] = useState(false); // State for email sending
 
-  const activateParentDropdown = useCallback((item) => {
+  const activateParentDropdown = (item) => {
     item.classList.add("active");
     let parent = item.parentElement;
     while (parent) {
@@ -24,10 +23,10 @@ const SidebarContent = ({ location, t }) => {
       }
       parent = parent.parentElement;
     }
-  }, []);
+  };
 
   useEffect(() => {
-    const pathName = location.pathname;
+    const pathName = location?.pathname; // Optional chaining to prevent errors
 
     const initMenu = () => {
       new MetisMenu("#side-menu");
@@ -48,12 +47,10 @@ const SidebarContent = ({ location, t }) => {
       }
     };
 
-    initMenu();
-  }, [location.pathname, activateParentDropdown]);
-
-  useEffect(() => {
-    ref.current.recalculate();
-  }, []);
+    if (location) {
+      initMenu();
+    }
+  }, [location]); // Depend on location to rerun when location changes
 
   const handleFileSelect = (event) => {
     const file = event.target.files[0];
@@ -73,29 +70,35 @@ const SidebarContent = ({ location, t }) => {
       alert("No file selected. Please choose a file first.");
       return;
     }
-  
+
     const formData = new FormData();
     formData.append("file", selectedFile);
-  
-    console.log("FormData:", formData); // Log FormData before making the request
-  
+
+    setIsUploading(true);
     try {
-      const response = await axios.post("http://localhost:4000/api/upload-csv", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      const response = await fetch("http://localhost:4000/api/upload-csv", {
+        method: "POST",
+        body: formData,
       });
-      alert(response.data.message); // Show success message
-      setSelectedFile(null); // Clear selected file after successful upload
+      if (response.ok) {
+        const data = await response.json();
+        alert(data.message);
+        setSelectedFile(null);
+      } else {
+        throw new Error("Failed to upload file");
+      }
     } catch (error) {
       console.error("Error uploading file:", error);
-      alert("Failed to upload file"); // Show error message
+      alert("Failed to upload file");
+    } finally {
+      setIsUploading(false);
     }
   };
-   
+
   const handleSendEmails = async () => {
+    setIsSendingEmails(true);
     try {
-      const response = await fetch("/api/bulk-sender", {
+      const response = await fetch("http://localhost:4000/api/bulk-sender", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -109,6 +112,8 @@ const SidebarContent = ({ location, t }) => {
     } catch (error) {
       console.error("Error sending emails:", error);
       alert("An error occurred while sending emails");
+    } finally {
+      setIsSendingEmails(false);
     }
   };
 
@@ -153,17 +158,20 @@ const SidebarContent = ({ location, t }) => {
                   <button
                     onClick={handleFileUpload}
                     className="btn btn-primary mt-3"
-                    disabled={!selectedFile}
+                    disabled={!selectedFile || isUploading}
+                    style={{ width: "100%", padding: "10px" }}
                   >
-                    {t("Upload CSV")}
+                    {isUploading ? t("Uploading...") : t("Upload CSV")}
                   </button>
                 </li>
                 <li>
                   <button
                     onClick={handleSendEmails}
                     className="btn btn-primary mt-3"
+                    disabled={isSendingEmails}
+                    style={{ width: "100%", padding: "10px" }}
                   >
-                    {t("Send Emails to Everyone")}
+                    {isSendingEmails ? t("Sending Emails...") : t("Send Emails to Everyone")}
                   </button>
                 </li>
               </ul>
@@ -173,11 +181,6 @@ const SidebarContent = ({ location, t }) => {
       </SimpleBar>
     </React.Fragment>
   );
-};
-
-SidebarContent.propTypes = {
-  location: PropTypes.object,
-  t: PropTypes.any,
 };
 
 export default withTranslation()(withRouter(SidebarContent));

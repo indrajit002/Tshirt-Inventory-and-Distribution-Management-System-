@@ -5,8 +5,8 @@ require('dotenv').config();
 // Define the BulkEmailSender function
 async function BulkEmailSender(req, res) {
     const mongoURL = process.env.MONGODB_URI;
-    const dbName = 'pROJECT_sPACE'; // Database name
-    const collectionName = 'Testing02'; // Collection name
+    const dbName = process.env.Database_Name; // Database name from .env
+    const collectionName = process.env.Collection_Name; // Collection name from .env
 
     try {
         // Connect to the MongoDB Atlas cluster
@@ -31,10 +31,10 @@ async function BulkEmailSender(req, res) {
 
         // Define the email content
         const mailOptions = {
-            from: process.env.Mail_Sender, // Sender email address
+            from: process.env.Mail_Sender,
             to: emails.join(','), // Join the emails array
-            subject: 'Mail from Thub@io', // Subject
-            text: 'You have received your Thub T-shirt!' // Text content
+            subject: 'Mail from Thub@io',
+            text: 'You have received your Thub T-shirt!'
         };
 
         // Send the email
@@ -54,4 +54,3 @@ async function BulkEmailSender(req, res) {
 
 // Export the BulkEmailSender function
 module.exports = { BulkEmailSender };
-

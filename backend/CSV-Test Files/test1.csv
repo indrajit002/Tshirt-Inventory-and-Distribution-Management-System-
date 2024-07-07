@@ -1,0 +1,11 @@
+first_name,last_name,roll_number,mobile_number,Email,branch,passout_year,college,course,gender
+John,Doe,12345,555-5555,john.doe@example.com,Computer Science,2023,Some College,B.Tech,Male
+Jane,Smith,67890,555-5556,jane.smith@example.com,Mechanical,2022,Another College,M.Tech,Female
+Alice,Johnson,54321,555-5557,alice.johnson@example.com,Electrical,2024,New College,B.E.,Female
+Michael,Brown,98765,555-5558,michael.brown@example.com,Civil,2023,Old College,B.Tech,Male
+Emily,Williams,13579,555-5559,emily.williams@example.com,Chemical,2023,University X,B.Tech,Female
+James,Jones,24680,555-5560,james.jones@example.com,Computer Science,2022,Some College,B.Sc.,Male
+Sophia,Davis,10101,555-5561,sophia.davis@example.com,Electronics,2022,Another College,B.E.,Female
+Daniel,Miller,11223,555-5562,daniel.miller@example.com,Mechanical,2023,New College,B.Tech,Male
+Olivia,Wilson,31415,555-5563,olivia.wilson@example.com,Electrical,2024,University Y,B.E.,Female
+William,Martin,27182,555-5564,william.martin@example.com,Computer Science,2022,Old College,B.Tech,Male

@@ -1,4 +1,4 @@
-const userModel = require('../models/user'); // Assuming your User model is defined in 'models/user.js'
+const userModel = require('../models/user');
 
 async function addUser(req, res) {
   try {

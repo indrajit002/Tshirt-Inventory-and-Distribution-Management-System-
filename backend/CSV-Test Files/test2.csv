@@ -1,0 +1,21 @@
+first_name,last_name,roll_number,mobile_number,Email,branch,passout_year,college,course,gender
+Sarah,Johnson,54321,555-5557,sarah.johnson@example.com,Electrical,2024,New College,B.E.,Female
+Matthew,Clark,98765,555-5558,matthew.clark@example.com,Civil,2023,Old College,B.Tech,Male
+Emma,White,13579,555-5559,emma.white@example.com,Chemical,2023,University X,B.Tech,Female
+David,Hall,24680,555-5560,david.hall@example.com,Computer Science,2022,Some College,B.Sc.,Male
+Sophie,Moore,10101,555-5561,sophie.moore@example.com,Electronics,2022,Another College,B.E.,Female
+Liam,Anderson,11223,555-5562,liam.anderson@example.com,Mechanical,2023,New College,B.Tech,Male
+Ella,Thompson,31415,555-5563,ella.thompson@example.com,Electrical,2024,University Y,B.E.,Female
+Noah,Baker,27182,555-5564,noah.baker@example.com,Computer Science,2022,Old College,B.Tech,Male
+Isabella,Garcia,81927,555-5565,isabella.garcia@example.com,Chemical,2023,University Z,B.Tech,Female
+Alexander,Rivera,71829,555-5566,alexander.rivera@example.com,Computer Science,2024,New College,B.Tech,Male
+Gabriella,Lopez,91827,555-5567,gabriella.lopez@example.com,Electronics,2024,University W,B.E.,Female
+Jacob,Hernandez,28192,555-5568,jacob.hernandez@example.com,Mechanical,2022,Another College,B.E.,Male
+Ava,Taylor,19283,555-5569,ava.taylor@example.com,Computer Science,2023,Old College,B.Tech,Female
+Benjamin,Morris,37281,555-5570,benjamin.morris@example.com,Civil,2023,University X,B.Tech,Male
+Mia,Adams,83721,555-5571,mia.adams@example.com,Electrical,2022,Some College,B.E.,Female
+Ethan,Wright,28291,555-5572,ethan.wright@example.com,Chemical,2024,New College,B.Tech,Male
+Scarlett,Scott,91283,555-5573,scarlett.scott@example.com,Electronics,2022,University Y,B.E.,Female
+Lucas,Green,13921,555-5574,lucas.green@example.com,Mechanical,2022,Old College,B.Tech,Male
+Lily,Hill,38192,555-5575,lily.hill@example.com,Computer Science,2023,Another College,B.Sc.,Female
+Logan,Young,91823,555-5576,logan.young@example.com,Electrical,2024,University Z,B.E.,Male

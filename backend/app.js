@@ -1,9 +1,10 @@
+// app.js
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const InitiateMongoServer = require("./src/config/db");
-const UserRouter = require("./src/routes/userRoutes");
-const fileUploadRouter = require("./src/upload-System/fileUploadRoutes");
+const UserRouter = require("./src/routes/userRoutes"); // Import userRoutes.js
+const UploadRouter = require("./src/routes/uploadRoutes"); // Import uploadRoutes.js
 require("dotenv").config();
 
 const app = express();
@@ -31,8 +32,8 @@ app.get("/", (req, res) => {
 // Mount UserRouter at root path
 app.use("/", UserRouter);
 
-// Mount file upload routes under /api
-app.use("/api", fileUploadRouter);
+// Mount UploadRouter at /api path
+app.use("/api", UploadRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
