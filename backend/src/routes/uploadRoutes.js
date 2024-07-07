@@ -21,8 +21,8 @@ router.post("/upload-csv", upload.single("file"), async (req, res) => {
   try {
     // Connect to MongoDB
     await client.connect();
-    const database = client.db("pROJECT_sPACE"); // Replace with your database name
-    const collection = database.collection("Testing02"); // Replace with your collection name
+    const database = client.db(process.env.Database_Name); // Replace with your database name
+    const collection = database.collection(process.env.Collection_Name); // Replace with your collection name
     
     // Read and parse CSV file
     fs.createReadStream(filePath)

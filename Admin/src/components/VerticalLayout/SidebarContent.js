@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import SimpleBar from "simplebar-react";
-import { Link, withRouter } from "react-router-dom"; // Ensure withRouter is imported
+import { Link, withRouter } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import MetisMenu from "metismenujs";
 
@@ -8,7 +8,7 @@ const SidebarContent = ({ location, t }) => {
   const ref = useRef();
   const [selectedFile, setSelectedFile] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
-  const [isSendingEmails, setIsSendingEmails] = useState(false); // State for email sending
+  const [isSendingEmails, setIsSendingEmails] = useState(false);
 
   const activateParentDropdown = (item) => {
     item.classList.add("active");
@@ -26,7 +26,7 @@ const SidebarContent = ({ location, t }) => {
   };
 
   useEffect(() => {
-    const pathName = location?.pathname; // Optional chaining to prevent errors
+    const pathName = location?.pathname;
 
     const initMenu = () => {
       new MetisMenu("#side-menu");
@@ -50,7 +50,7 @@ const SidebarContent = ({ location, t }) => {
     if (location) {
       initMenu();
     }
-  }, [location]); // Depend on location to rerun when location changes
+  }, [location]);
 
   const handleFileSelect = (event) => {
     const file = event.target.files[0];
@@ -117,6 +117,22 @@ const SidebarContent = ({ location, t }) => {
     }
   };
 
+  const handleDeleteAllData = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/delete-all-data", {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        alert("All data deleted successfully!");
+      } else {
+        alert("Failed to delete all data");
+      }
+    } catch (error) {
+      console.error("Error deleting data:", error);
+      alert("An error occurred while deleting data");
+    }
+  };
+
   return (
     <React.Fragment>
       <SimpleBar ref={ref} className="vertical-simplebar">
@@ -142,17 +158,24 @@ const SidebarContent = ({ location, t }) => {
                 <span>{t("Student Delivery Report")}</span>
               </Link>
               <ul className="sub-menu">
-                <li>
-                  <label htmlFor="file-upload" className="waves-effect">
-                    <i className="mdi mdi-upload"></i>
-                    <span>{t("Select CSV")}</span>
-                  </label>
-                  <input
-                    id="file-upload"
-                    type="file"
-                    style={{ display: "none" }}
-                    onChange={handleFileSelect}
-                  />
+                <li className="mb-3">
+                  <div className="d-flex align-items-center justify-content-center">
+                    <label
+                      htmlFor="file-upload"
+                      className="text-center border rounded p-3 shadow"
+                      style={{ cursor: "pointer", minWidth: "200px" }}
+                    >
+                      <i className="mdi mdi-upload mdi-36px mb-2"></i>
+                      <br />
+                      <span style={{ fontSize: "16px", fontWeight: "bold" }}>{t("Select .CSV File ")}</span>
+                    </label>
+                    <input
+                      id="file-upload"
+                      type="file"
+                      style={{ display: "none" }}
+                      onChange={handleFileSelect}
+                    />
+                  </div>
                 </li>
                 <li>
                   <button
@@ -172,6 +195,15 @@ const SidebarContent = ({ location, t }) => {
                     style={{ width: "100%", padding: "10px" }}
                   >
                     {isSendingEmails ? t("Sending Emails...") : t("Send Emails to Everyone")}
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={handleDeleteAllData}
+                    className="btn btn-danger mt-3"
+                    style={{ width: "100%", padding: "10px" }}
+                  >
+                    {t("Delete All Data")}
                   </button>
                 </li>
               </ul>

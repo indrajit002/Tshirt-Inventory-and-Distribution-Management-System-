@@ -1,11 +1,13 @@
 // app.js
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const InitiateMongoServer = require("./src/config/db");
 const UserRouter = require("./src/routes/userRoutes"); // Import userRoutes.js
 const UploadRouter = require("./src/routes/uploadRoutes"); // Import uploadRoutes.js
-require("dotenv").config();
+const DeleteRouter = require("./src/routes/deleteRoutes"); // Import deleteRoutes.js
+require("dotenv").config(); // Load environment variables
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -34,6 +36,9 @@ app.use("/", UserRouter);
 
 // Mount UploadRouter at /api path
 app.use("/api", UploadRouter);
+
+// Mount DeleteRouter at /api path for delete operations
+app.use("/api", DeleteRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
