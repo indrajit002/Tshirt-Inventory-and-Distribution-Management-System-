@@ -168,7 +168,7 @@
     // Email message configuration
     // let mailOptions = {
         // from: 'edgar.yundt70@ethereal.email', // Sender email address
-        // to: 'bhargavvobilisetti@gmail.com', // Receiver email address
+        // to: '', // Receiver email address
         // subject: 'Subject of your email',
         // text: 'Body of your email'
     // };
