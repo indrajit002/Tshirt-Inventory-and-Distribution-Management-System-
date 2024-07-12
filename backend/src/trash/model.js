@@ -1,6 +1,6 @@
 // const mongoose = require('mongoose');
 // //Mongodb URI
-// const MONGOURI = "mongodb+srv://indrajit_01:xLqjL5eluYv8nMsL@cluster01.q6vzi1k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster01";
+// const MONGOURI = "";
 // // Define your schema
 // const userDataSchema = new mongoose.Schema({
 //     // name: String,
