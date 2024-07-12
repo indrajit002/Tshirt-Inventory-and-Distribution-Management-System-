@@ -25,7 +25,7 @@
 //   // send mail with defined transport object
 //   const info = await transporter.sendMail({
 //     from: '"Maddison Foo Koch 👻" <mariah.green10@ethereal.email>', // sender address
-//     to: "prasadreddy7577@gmail.com, indrajitbarman2003@gmail.com", // list of receivers
+//     to: "", // list of receivers
 //     subject: "Hello ✔", // Subject line
 //     text: "Hello world?", // plain text body
 //     html: "<b>Hello world?</b>", // html body
