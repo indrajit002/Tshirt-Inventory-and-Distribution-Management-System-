@@ -18,6 +18,8 @@ const Dashboard2 = () => {
         tshirtExchanged: 0,
         tshirtLeft: 0
     });
+    const [loading, setLoading] = useState(true); // Loading state
+    const [error, setError] = useState(null);     // Error state
 
     useEffect(() => {
         fetchMetricsData();
@@ -25,8 +27,25 @@ const Dashboard2 = () => {
 
     const fetchMetricsData = async () => {
         try {
-            const endpoints = ['/api/orders', '/api/needed', '/api/distributed', '/api/returned', '/api/exchanged', '/api/left'];
-            const responses = await Promise.all(endpoints.map(endpoint => fetch(endpoint)));
+            const endpoints = [
+                '/api/orders',
+                '/api/needed',
+                '/api/distributed',
+                '/api/returned',
+                '/api/exchanged',
+                '/api/left'
+            ];
+
+            const promises = endpoints.map(endpoint =>
+                fetch(endpoint)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => data.length > 0 ? data.reduce((acc, item) => acc + item.quantity, 0) : 0)
+            );
 
             const [
                 tshirtOrderedCount,
@@ -35,7 +54,7 @@ const Dashboard2 = () => {
                 tshirtReturnedCount,
                 tshirtExchangedCount,
                 tshirtLeftCount
-            ] = await Promise.all(responses.map(response => handleResponse(response)));
+            ] = await Promise.all(promises);
 
             setMetrics({
                 tshirtOrdered: tshirtOrderedCount,
@@ -45,18 +64,22 @@ const Dashboard2 = () => {
                 tshirtExchanged: tshirtExchangedCount,
                 tshirtLeft: tshirtLeftCount
             });
+
+            setLoading(false); // Set loading to false once data is fetched
         } catch (error) {
             console.error('Error fetching Metrics Data:', error);
+            setError(error.message);
+            setLoading(false); // Set loading to false in case of error
         }
     };
 
-    const handleResponse = async (response) => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        return data.length > 0 ? data.reduce((acc, item) => acc + item.quantity, 0) : 0;
-    };
+    if (loading) {
+        return <p>Loading...</p>; // Display a loading message while fetching data
+    }
+
+    if (error) {
+        return <p>Error: {error}</p>; // Display an error message if data fetching fails
+    }
 
     return (
         <React.Fragment>

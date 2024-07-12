@@ -11,7 +11,9 @@ const tshirtRoutes = require('./src/routes/tshirtRoutes');
 const datesRoutes = require('./src/routes/datesRoutes');
 // const MetricsRoutes = require('./src/routes/MetricsRoutes')
 // const metricsRoutes = require('./src/routes/metricsRoutes');
-const tshirtMetricsRoutes = require('./src/routes/tshirtMetricsRoutes');
+// const tshirtMetricsRoutes = require('./src/routes/tshirtMetricsRoutes');
+const metricsRoutes = require('./src/routes/metricsRoutes')
+
 require('dotenv').config();
 
 const app = express();
@@ -40,7 +42,9 @@ app.use('/api', tshirtRoutes);
 app.use('/api',datesRoutes);
 // app.use('/api',MetricsRoutes)
 // app.use('/api', metricsRoutes);
-app.use('/api', tshirtMetricsRoutes);
+// app.use('/api', tshirtMetricsRoutes);
+app.use('api',metricsRoutes)
+
 
 
 // app.use('/api', sizeRoutes); // Mount sizeRoutes under /api
