@@ -1,161 +1,115 @@
-import React from 'react';
-import { Card, CardBody, Col, Row } from 'reactstrap';
-import ReactApexChart from "react-apexcharts"
+import React, { useState, useEffect } from 'react';
+import { Col, Row } from 'reactstrap';
 
 import Breadcrumbs from '../../components/Common/Breadcrumb';
-import SalesReport from './SalesReport';
-import EmailSent from './EmailSent';
-import MiniWidget from './MiniWidget';
-import EarningChart from './EarningChart';
-import YearlySale from './YearlySale';
-import ActivityComp from "./ActivityComp"
-import PopularProduct from "./PopularProduct"
-import SocialSource from "./SocialSource"
-
-const series = [70]
-
-const options = {
-    plotOptions: {
-        radialBar: {
-            offsetY: -12,
-            hollow: {
-                margin: 5, size: '60%', background: 'rgba(59, 93, 231, .25)',
-            }
-            ,
-            dataLabels: {
-                name: {
-                    show: false,
-                }
-                ,
-                value: {
-                    show: true, fontSize: '12px', offsetY: 5,
-                }
-                ,
-                style: {
-                    colors: ['#fff']
-                }
-            }
-        }
-        ,
-    }
-    ,
-    colors: ['#3b5de7'],
-}
-
-const series1 = [81]
-
-const options1 = {
-    plotOptions: {
-        radialBar: {
-            offsetY: -12,
-            hollow: {
-                margin: 5, size: '60%', background: 'rgba(69, 203, 133, .25)',
-            }
-            ,
-            dataLabels: {
-                name: {
-                    show: false,
-                }
-                ,
-                value: {
-                    show: true, fontSize: '12px', offsetY: 5,
-                }
-                ,
-                style: {
-                    colors: ['#fff']
-                }
-            }
-        }
-        ,
-    }
-    ,
-    colors: ['#45CB85'],
-}
+import MetricCard from './MetricCard';
+import TshirtTable from './TshirtTable';
+import GenderDoughnutChart from './GenderDoughnutChart';
+import SizePieChart from './SizePieChart';
+import TshirtDataBySizes from './TshirtDataBySizes';
+import DateTable from './DateTable';
 
 const Dashboard2 = () => {
+    const [metrics, setMetrics] = useState({
+        tshirtOrdered: 0,
+        tshirtNeeded: 0,
+        tshirtDistributed: 0,
+        tshirtReturned: 0,
+        tshirtExchanged: 0,
+        tshirtLeft: 0
+    });
+
+    useEffect(() => {
+        fetchMetricsData();
+    }, []);
+
+    const fetchMetricsData = async () => {
+        try {
+            const endpoints = ['/api/orders', '/api/needed', '/api/distributed', '/api/returned', '/api/exchanged', '/api/left'];
+            const responses = await Promise.all(endpoints.map(endpoint => fetch(endpoint)));
+
+            const [
+                tshirtOrderedCount,
+                tshirtNeededCount,
+                tshirtDistributedCount,
+                tshirtReturnedCount,
+                tshirtExchangedCount,
+                tshirtLeftCount
+            ] = await Promise.all(responses.map(response => handleResponse(response)));
+
+            setMetrics({
+                tshirtOrdered: tshirtOrderedCount,
+                tshirtNeeded: tshirtNeededCount,
+                tshirtDistributed: tshirtDistributedCount,
+                tshirtReturned: tshirtReturnedCount,
+                tshirtExchanged: tshirtExchangedCount,
+                tshirtLeft: tshirtLeftCount
+            });
+        } catch (error) {
+            console.error('Error fetching Metrics Data:', error);
+        }
+    };
+
+    const handleResponse = async (response) => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.length > 0 ? data.reduce((acc, item) => acc + item.quantity, 0) : 0;
+    };
+
     return (
         <React.Fragment>
             <div className="page-content">
                 <Breadcrumbs title="Dashboard" breadcrumbItem="Dashboard 2" />
                 <Row>
-                    <Col lg={6}>
-
+                    <Col lg={12}>
                         <Row>
-                            <Col md={6}>
-                                <Card>
-                                    <CardBody>
-                                        <Row>
-                                            <Col xs={8}>
-                                                <div>
-                                                    <p className="text-muted fw-medium mt-1 mb-2">Tshirt Orders</p>
-                                                    <h4>1,368</h4>
-                                                </div>
-                                            </Col>
-
-                                            <div className="col-4">
-                                                <div>
-                                                    <ReactApexChart
-                                                        options={options}
-                                                        series={series}
-                                                        type="radialBar"
-                                                        height="120"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </Row>
-
-                                        <p className="mb-0"><span className="badge badge-soft-success me-2"> 0.8% <i
-                                            className="mdi mdi-arrow-up"></i> </span> From previous period</p>
-                                    </CardBody>
-                                </Card>
+                            <Col md={2}>
+                                <MetricCard label="Tshirt Ordered" value={metrics.tshirtOrdered} />
                             </Col>
-                            <Col md={6}>
-                                <Card>
-                                    <CardBody>
-                                        <Row>
-                                            <Col xs={8}>
-                                                <div>
-                                                    <p className="text-muted fw-medium mt-1 mb-2">Tshirt Delivered</p>
-                                                    <h4>$ 32,695</h4>
-                                                </div>
-                                            </Col>
-
-                                            <Col xs={4}>
-                                                <div>
-                                                    <ReactApexChart
-                                                        options={options1}
-                                                        series={series1}
-                                                        type="radialBar"
-                                                        height="120"
-                                                    />
-                                                </div>
-                                            </Col>
-                                        </Row>
-
-                                        <p className="mb-0"><span className="badge badge-soft-success me-2"> 0.6% <i
-                                            className="mdi mdi-arrow-up"></i> </span> From previous period</p>
-                                    </CardBody>
-                                </Card>
+                            <Col md={2}>
+                                <MetricCard label="Tshirt Needed" value={metrics.tshirtNeeded} />
+                            </Col>
+                            <Col md={2}>
+                                <MetricCard label="Tshirt Distributed" value={metrics.tshirtDistributed} />
+                            </Col>
+                            <Col md={2}>
+                                <MetricCard label="Tshirt Returned" value={metrics.tshirtReturned} />
+                            </Col>
+                            <Col md={2}>
+                                <MetricCard label="Tshirt Exchanged" value={metrics.tshirtExchanged} />
+                            </Col>
+                            <Col md={2}>
+                                <MetricCard label="Tshirt Left" value={metrics.tshirtLeft} />
                             </Col>
                         </Row>
-                        <SalesReport />
-
-                    </Col>
-                    <EmailSent />
-                </Row>
-                <Row>
-                    <Col xl={6}>
-                        <MiniWidget />
-                    </Col>
-                    <Col xl={6}>
-                        <YearlySale />
                     </Col>
                 </Row>
                 <Row>
+                    <Col xl={12}>
+                        <Row>
+                            <Col xl={6}>
+                                <GenderDoughnutChart />
+                            </Col>
+                            <Col xl={6}>
+                                <SizePieChart />
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col lg={8}>
+                        <TshirtTable />
+                    </Col>
+                    <Col lg={10}>
+                        <TshirtDataBySizes />
+                    </Col>
+                    <Col lg={10}>
+                        <DateTable />
+                    </Col>
                 </Row>
             </div>
         </React.Fragment>
-    )
-}
+    );
+};
 
 export default Dashboard2;

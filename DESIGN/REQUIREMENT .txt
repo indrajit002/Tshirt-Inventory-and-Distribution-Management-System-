@@ -1,0 +1,51 @@
+Radical chart 
+ -- for delivered tshirt 
+ which type 
+ 
+Donut chart 
+ -- remaining tshirt in inventory 
+     == > in that pie chart to see how many in that is male and  how many female 
+Bar chart for sizes 
+==================================================================================
+REQUIREMENTS OF THE PROJECT:
+	
+    
+•	Types of Technical Hub T-shirts in Tabular form  ===> content table 
+    Number of T-shirts distributed from the ordered T-shirts(should be completely listed in the tabular format) ==> box 
+•	Number of male students and the female students of Technical Hub ==> piechart
+•	Different types of Sizes (XXL,XL,L,M,S,XS) ==> bar chart 
+•	Number of T-shirts according to the Sizes (no.of XXL T-shirts, no.of XL T-shirts) purchased and distributed ==>  content table 
+
+•	Dates of T-shirts Ordering, purchasing and distribution (Ordering, purchasing should be in same side) ==>Contextual class (table)
+	Number of T-shirts Exchanged (Sizes issues) ==> box
+	Number of T-shirts are left at last after distribution.==> box / pie chart
+
+
+====================================================================================================================================================================================
+Tshirt ordered 
+Tshirt Needed
+Tshirt Distributed 
+Tshirt Needed
+Tshirt Exchanged 
+
+piechart 
+content table 
+piechart 1/2
+bar chart
+content table 
+
+
+====================================================================================================================================================================================
+
+REQUIREMENTS OF THE PROJECT:
+•	Number of T-shirts ordered by the Technical Hub (count of T-shirts) ✔️
+•	Number of T-shirts needed ✔️
+•	Types of Technical Hub T-shirts (Owl Coder T-shirts, Project Space T-shirts, Drive Ready T-shirts, Ignite coder T-shirts, Interns T-shirts, Staff T-shirts, Forensic T-shirts) ✔ ️
+•	Types of Technical Hub T-shirts in Tabular form ✔️
+•	Number of T-shirts distributed from the ordered T-shirts(should be completely listed in the tabular format) ✔️
+•	Number of male students and the female students of Technical Hub ✔️
+•	Different types of Sizes (XXL,XL,L,M,S,XS) ✔️
+•	Number of T-shirts according to the Sizes  purchased and distributed ✔️
+•	Dates of T-shirts Ordering, purchasing and distribution (Ordering, purchasing should be in same side)
+•	Number of T-shirts Exchanged (Sizes issues) ✔️
+•	Number of T-shirts are left at last after distribution. ✔️
