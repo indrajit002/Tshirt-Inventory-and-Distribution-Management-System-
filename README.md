@@ -35,7 +35,8 @@ The Inventory Management System, developed by Indrajit Barman, is a comprehensiv
     npm install
     cd client
     npm install
-    npm i react-scripts --legacy-peer-deps
+    npm install react-scripts --legacy-peer-deps
+
     cd ..
     ```
 
