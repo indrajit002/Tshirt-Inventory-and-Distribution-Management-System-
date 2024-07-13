@@ -43,10 +43,17 @@ The Inventory Management System, developed by Indrajit Barman, is a comprehensiv
 3. Install dependencies for both frontend and backend:
     ```bash
     npm install
+npm i react-scrips --legacy-peers-deps
     cd client
     npm install
     cd ..
     ```
+
+---versions 
+npm 
+10.2.4
+node 
+18.19.1
 4. Set up environment variables:
     - Create a `.env` file in the root directory.
     - Add the following variables:
