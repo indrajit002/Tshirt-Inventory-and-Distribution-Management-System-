@@ -48,12 +48,12 @@ const Dashboard2 = () => {
             );
 
             const [
-                tshirtOrderedCount,
-                tshirtNeededCount,
-                tshirtDistributedCount,
-                tshirtReturnedCount,
-                tshirtExchangedCount,
-                tshirtLeftCount
+                tshirtOrderedCount = 0,
+                tshirtNeededCount = 0,
+                tshirtDistributedCount = 0,
+                tshirtReturnedCount = 0,
+                tshirtExchangedCount = 0,
+                tshirtLeftCount = 0
             ] = await Promise.all(promises);
 
             setMetrics({

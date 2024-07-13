@@ -1,34 +1,20 @@
+// tshirtMetricsRoutes.js
 const express = require('express');
 const router = express.Router();
-const TshirtMetrics = require('../models/TshirtMetrics');
+const {
+    getOrders,
+    getNeeded,
+    getDistributed,
+    getReturned,
+    getExchanged,
+    getLeft
+} = require('../controllers/tshirtMetricsController');
 
-// Get all metrics
-router.get('/', async (req, res) => {
-    try {
-        const metrics = await TshirtMetrics.find();
-        res.json(metrics);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
-    }
-});
-
-// Add a new metric
-router.post('/', async (req, res) => {
-    const { metricType, quantity } = req.body;
-
-    try {
-        const newMetric = new TshirtMetrics({
-            metricType,
-            quantity
-        });
-
-        await newMetric.save();
-        res.json(newMetric);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
-    }
-});
+router.get('/orders', getOrders);
+router.get('/needed', getNeeded);
+router.get('/distributed', getDistributed);
+router.get('/returned', getReturned);
+router.get('/exchanged', getExchanged);
+router.get('/left', getLeft);
 
 module.exports = router;
