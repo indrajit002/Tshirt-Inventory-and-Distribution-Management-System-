@@ -1,13 +1,3 @@
-***INVENTORY MANAGEMENT SYSTEM***
-@INDRAJIT
-This is a Management system that provides dashboard for orders and distribution and provides a automated mailing systtem to send automated mails , to received students 
-this will take the gmals  from the cluster in the mongodb.
-this will a very good management system to manage all the things all together 
-and then to give the emails and other details it will provide a upload button to upload the details by a .csv file 
-
-
----
-
 # Inventory Management System
 
 ## Introduction
@@ -43,17 +33,16 @@ The Inventory Management System, developed by Indrajit Barman, is a comprehensiv
 3. Install dependencies for both frontend and backend:
     ```bash
     npm install
-npm i react-scrips --legacy-peers-deps
     cd client
     npm install
+    npm i react-scripts --legacy-peer-deps
     cd ..
     ```
 
----versions 
-npm 
-10.2.4
-node 
-18.19.1
+    - **Node and npm versions**:
+        - npm: 10.2.4
+        - node: 18.19.1
+
 4. Set up environment variables:
     - Create a `.env` file in the root directory.
     - Add the following variables:
@@ -67,7 +56,7 @@ node
 
 1. Start the backend server:
     ```bash
-    npm start 
+    npm start
     ```
 2. Start the frontend development server:
     ```bash
@@ -114,10 +103,6 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For any inquiries or feedback, please reach out to Indrajit Barman by email or linkdin .
-indrajitbarman2003@gmail.com
-or linkdin =>  https://www.linkedin.com/in/indrajit-barman-276486227/
-
----
-
-
+For any inquiries or feedback, please reach out to Indrajit Barman by email or LinkedIn:
+- Email: indrajitbarman2003@gmail.com
+- LinkedIn: [Indrajit Barman](https://www.linkedin.com/in/indrajit-barman-276486227/)
