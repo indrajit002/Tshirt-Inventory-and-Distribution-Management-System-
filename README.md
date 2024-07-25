@@ -105,4 +105,4 @@ This project is licensed under the MIT License.
 
 For any inquiries or feedback, please reach out to Indrajit Barman by email or LinkedIn:
 - Email: indrajitbarman2003@gmail.com
-- LinkedIn: [Indrajit Barman](https://www.linkedin.com/in/indrajit-barman-276486227/)
+- LinkedIn: [Indrajit Barman](https://www.linkedin.com/in/indrajit-barman-276486227/)     
