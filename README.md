@@ -6,7 +6,7 @@ The Inventory Management System, developed by Indrajit Barman, is a comprehensiv
 
 ## Features
   
-- **Dashboard for Orders and Distribution**: An intuitive dashboard that provides an overview of all orders and distribution activities.
+- **Dashboard for Orders and Distribution**: An intuitive dashboard that provides an overview of all orders and distribution activities.   
 - **Automated Mailing System**: Automatically sends emails to students who have received items, using data from MongoDB.  
 - **CSV File Upload**: Allows users to upload details using a `.csv` file for easy data management.
 - **Real-time Updates**: Provides real-time updates on inventory status and order processing.
