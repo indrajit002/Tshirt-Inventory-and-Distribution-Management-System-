@@ -18,7 +18,7 @@ The Inventory Management System, developed by Indrajit Barman, is a comprehensiv
 - **Database**: MongoDB
 - **Mailing**: Nodemailer
 - **Charting**: ApexCharts
-
+  
 ## Installation  
 
 1. Clone the repository:
