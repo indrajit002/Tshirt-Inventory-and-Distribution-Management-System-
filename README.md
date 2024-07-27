@@ -11,7 +11,7 @@ The Inventory Management System, developed by Indrajit Barman, is a comprehensiv
 - **CSV File Upload**: Allows users to upload details using a `.csv` file for easy data management.
 - **Real-time Updates**: Provides real-time updates on inventory status and order processing.
 - **Email Notifications**: Ensures timely communication with recipients through automated emails.
-   
+
 ## Technologies Used
 - **Frontend**: React.js
 - **Backend**: Node.js, Express.js  
