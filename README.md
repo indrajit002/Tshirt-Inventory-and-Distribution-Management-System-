@@ -83,7 +83,7 @@ inventory-management-system/
 ├── config/
 ├── .env
 ├── server.js
-├── package.json   
+├── package.json
 └── ...
 ```
 
