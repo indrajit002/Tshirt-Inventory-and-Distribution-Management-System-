@@ -12,7 +12,7 @@ The Inventory Management System, developed by Indrajit Barman, is a comprehensiv
 - **Real-time Updates**: Provides real-time updates on inventory status and order processing.
 - **Email Notifications**: Ensures timely communication with recipients through automated emails.
      
-## Technologies Used
+## Technologies Used   
 - **Frontend**: React.js     
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
